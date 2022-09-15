@@ -3,6 +3,11 @@ body {
   padding: 0;
 }
 
+#root {
+  display: grid;
+  row-gap: 4rem;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
