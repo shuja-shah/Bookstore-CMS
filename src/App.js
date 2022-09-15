@@ -3,8 +3,8 @@ import {
     Switch,
     Route,
   } from 'react-router-dom';
-import BookList from './Components/BookList';
-import BookForm from './Components/BookForm';
+import BookList from './Componenets/BookList';
+import BookForm from './Componenets/BookForm';
 import Nav from './Componenets/Nav';
 import Catogory from './Componenets/Catogories';
 
