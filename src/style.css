@@ -1,46 +1,46 @@
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color:#0290FF;
-    font-family: 'Roboto' , sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #0290ff;
+  font-family: 'Roboto', sans-serif;
 }
 
 .NavLinks {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
 }
 
 .NavLinks a {
-    text-decoration: none;
-    color: #000;
-    font-size: 1.2rem;
-    font-family: 'Poppins' , sans-serif;
-    padding: 0 1rem;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  padding: 0 1rem;
 }
 
 .book {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .book-top {
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items:flex-start
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
