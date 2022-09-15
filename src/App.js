@@ -18,7 +18,7 @@ const App = () => (
                     <BookList />
                     <BookForm />
                 </Route>
-                <Route exact path="/Catogories">
+                <Route exact path="/categories">
                     <Catogory />
                 </Route>
             </Switch>
