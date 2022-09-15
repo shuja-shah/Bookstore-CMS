@@ -31,3 +31,16 @@ nav {
     font-family: 'Poppins' , sans-serif;
     padding: 0 1rem;
 }
+
+.book {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book-top {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:flex-start
+}
