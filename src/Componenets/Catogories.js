@@ -1,8 +1,6 @@
-const Catogory = () => {
-    return (
-        <div>
-            <h1>Under Construction</h1>
-        </div>
-    )
-}
+const Catogory = () => (
+  <div>
+    <h1>Under Construction</h1>
+  </div>
+);
 export default Catogory;
