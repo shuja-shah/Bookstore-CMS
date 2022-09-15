@@ -5,5 +5,6 @@ const BookForm = () => {
                 <input type="text" placeholder="Author" />
                 <button type="submit">Add Book</button>
             </form>
+    )
 }
 export default BookForm;
