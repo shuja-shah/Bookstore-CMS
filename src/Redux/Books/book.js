@@ -3,12 +3,13 @@ const addBook = (book) => ({
   payload: book,
 });
 
-const removeBook = (book_ID) => ({
+const removeBook = (bookId) => ({
   type: 'REMOVE_BOOK',
-  payload: book_ID,
+  payload: bookId,
 });
 
 export { addBook, removeBook };
+
 const initialState = {
   books: [],
 };
