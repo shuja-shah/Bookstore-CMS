@@ -7,10 +7,14 @@ const BookForm = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
-  const handleSubmission = (e) => {
+  const handleTitle = (e) => {
     e.preventDefault();
-    setTitle(e.target[0].value);
-    setAuthor(e.target[1].value);
+    setTitle(e.target.value);
+  };
+
+  const handleAuthor = (e) => {
+    e.preventDefault();
+    setAuthor(e.target.value);
   };
 
   const sendSubmition = (e) => {
@@ -22,14 +26,13 @@ const BookForm = () => {
         author,
       },
     ));
-
-    setAuthor('');
     setTitle('');
+    setAuthor('');
   };
   return (
     <form onSubmit={sendSubmition}>
-      <input type="text" placeholder="Title" onChange={handleSubmission} />
-      <input type="text" placeholder="Author" onChange={handleSubmission} />
+      <input type="text" placeholder="Title" onChange={handleTitle} />
+      <input type="text" placeholder="Author" onChange={handleAuthor} />
       <button type="submit" onClick={sendSubmition}>Add Book</button>
     </form>
   );
