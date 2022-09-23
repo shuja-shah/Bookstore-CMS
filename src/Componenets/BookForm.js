@@ -16,16 +16,17 @@ const BookForm = () => {
     e.preventDefault();
     setAuthor(e.target.value);
   };
-
   const sendSubmition = (e) => {
     e.preventDefault();
-    dispatch(addBook(
-      {
-        id: Math.floor(Math.random() * 1000000) + 1,
-        title,
-        author,
-      },
-    ));
+    if (title && author !== '') {
+      dispatch(addBook(
+        {
+          id: Math.floor(Math.random() * 1000000) + 1,
+          title,
+          author,
+        },
+      ));
+    }
     setTitle('');
     setAuthor('');
   };
