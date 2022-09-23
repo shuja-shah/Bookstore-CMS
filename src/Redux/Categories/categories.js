@@ -9,7 +9,9 @@ const inital = [];
 const statusReducer = (state = inital, action) => {
   switch (action.type) {
     case 'CHECK_STATUS':
-      return 'UNDER CONSTRUCTION';
+      return {
+        currentStatus: 'UNDER CONSTRUCTION',
+      };
     default:
       return state;
   }
