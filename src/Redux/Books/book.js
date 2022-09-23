@@ -1,3 +1,5 @@
+import { createAsyncThunk } from '@reduxjs/toolkit';
+
 const addBook = (book) => ({
   type: 'ADD_BOOK',
   payload: book,
@@ -10,6 +12,7 @@ const removeBook = (bookId) => ({
 
 export { addBook, removeBook };
 
+createAsyncThunk();
 const initialState = {
   books: [
 
