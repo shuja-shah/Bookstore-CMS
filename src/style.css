@@ -161,6 +161,7 @@ nav {
   color: #fff;
   cursor: pointer;
 }
+
 .last-section {
   margin: 1.5625rem 3.656rem;
   display: flex;
@@ -188,4 +189,17 @@ input {
 
 .m-4 {
   margin: 0.4rem 4rem;
+}
+
+.book-top::after {
+  content: '';
+  display: block;
+  width: 3.5rem;
+  height: 4rem;
+  background: url('./Assets/Capture.PNG');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  right: 56%;
 }
