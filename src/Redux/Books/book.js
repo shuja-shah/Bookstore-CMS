@@ -1,47 +1,77 @@
-const addBook = (book) => ({
-  type: 'ADD_BOOK',
-  payload: book,
-});
+/* eslint-disable no-console */
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const removeBook = (bookId) => ({
-  type: 'REMOVE_BOOK',
-  payload: bookId,
-});
-
-export { addBook, removeBook };
-
-const initialState = {
-  books: [
-
-    {
-      id: 1,
-      title: 'The Hunger Games',
-      author: 'Suzanne Collins',
-    },
-    {
-      id: 2,
-      title: 'Dune',
-      author: 'Frank Herbert',
-    },
-    {
-      id: 3,
-      title: 'Capital in the Twenty-First Century',
-      author: 'Suzanne Collins',
-    },
-
-  ],
+const ADD_BOOK = 'bookStore/books/ADD_BOOK';
+const GET_BOOKS = 'bookStore/books/GET_BOOKS';
+const REMOVE_BOOK_FROM_API = 'bookStore/books/REMOVE_BOOK_FROM_API';
+const init = {
+  book: [],
 };
-const bookReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case 'ADD_BOOK':
+
+export const getBooks = createAsyncThunk(GET_BOOKS,
+  async (args, { dispatch }) => {
+    const bookAPi = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/5xkmcG6meC270bz735ko/books/';
+    const response = await fetch(bookAPi);
+    const data = await response.json();
+    const books = Object.keys(data).map((key) => {
+      const target = data[key][0];
       return {
-        ...state,
-        books: state.books.concat(action.payload),
+        item_id: key,
+        ...target,
       };
-    case 'REMOVE_BOOK':
+    });
+    dispatch({
+      type: GET_BOOKS,
+      payload: books,
+    });
+    return books;
+  });
+
+export const addBook = (book) => async (dispatch) => {
+  try {
+    await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/5xkmcG6meC270bz735ko/books', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(book),
+    });
+    dispatch({
+      type: ADD_BOOK,
+    });
+    dispatch(getBooks());
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const removeBook = (id) => async (dispatch) => {
+  fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/5xkmcG6meC270bz735ko/books/${id}`, {
+    method: 'DELETE',
+  })
+    .then(() => dispatch({
+      type: REMOVE_BOOK_FROM_API,
+      payload: id,
+    }))
+    .then((data) => {
+      console.log('remove book', data);
+    });
+};
+
+const bookReducer = (state = init, action) => {
+  switch (action.type) {
+    case GET_BOOKS:
       return {
         ...state,
-        books: state.books.filter((book) => book.id !== action.payload),
+        book: action.payload,
+      };
+    case ADD_BOOK:
+      return {
+        ...state,
+      };
+    case REMOVE_BOOK_FROM_API:
+      return {
+        ...state,
+        book: state.book.filter((book) => book.item_id !== action.payload),
       };
     default:
       return state;

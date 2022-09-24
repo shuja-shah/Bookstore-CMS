@@ -1,18 +1,21 @@
-import PropTypes from 'prop-types';
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+// import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../Redux/Books/book';
 
-const Book = ({ id, title, author }) => {
+const Book = (props) => {
   const dispatch = useDispatch();
   const handleRemove = () => {
-    dispatch(removeBook(id));
+    dispatch(removeBook(props.id));
   };
   return (
     <div className="book">
       <div className="book-top">
-        <p className="HideME">{id}</p>
-        <h3 className="title-book">{title}</h3>
-        <span className="author">{author}</span>
+        <p className="HideME">{props.item_id}</p>
+        <h3 className="title-book">{props.category}</h3>
+        <h3 className="title-book">{props.title}</h3>
+        <span className="author">{props.author}</span>
         <div className="CRUD">
           <button type="submit" className="btn btn-primary">Comments</button>
           <button type="submit" className="btn btn-primary">Edit</button>
@@ -32,10 +35,4 @@ const Book = ({ id, title, author }) => {
     </div>
   );
 };
-Book.propTypes = {
-  id: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
-};
-
 export default Book;
