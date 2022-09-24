@@ -61,3 +61,11 @@ nav {
 .HideME {
   display: none;
 }
+
+.book-list {
+  margin: 1.5625rem 3.656rem;
+  overflow-y: auto;
+  display: grid;
+  row-gap: 2rem;
+  background-color: #fafafa;
+}
