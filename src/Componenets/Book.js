@@ -33,7 +33,11 @@ const Book = (props) => {
         </div>
       </div>
       <div className="book-status__chapter">
-        <p>Current Chapter</p>
+        <p className="m-0 catagri">Current Chapter</p>
+        <div className="title-book">
+          Chapter
+          { props.chapter }
+        </div>
         <button type="submit" className="update-progress">UPDATE PROGRESS</button>
       </div>
     </div>

@@ -18,6 +18,7 @@ const BookList = () => {
           category={item.category}
           author={item.author}
           progress={Math.floor(Math.random() * 100)}
+          chapter={Math.floor(Math.random() * 10)}
         />
       ))}
     </div>
