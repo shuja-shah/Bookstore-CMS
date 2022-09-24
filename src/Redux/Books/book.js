@@ -4,9 +4,6 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const GET_BOOKS = 'bookStore/books/GET_BOOKS';
 const REMOVE_BOOK_FROM_API = 'bookStore/books/REMOVE_BOOK_FROM_API';
-
-// const api = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/lHmx2UhvNK6tY34Detmr/books/';
-
 const init = {
   book: [],
 };
