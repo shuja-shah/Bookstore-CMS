@@ -49,6 +49,10 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  outline: 1px solid #f4f5f9;
+  border-radius: 5px;
 }
 
 .book-top {
