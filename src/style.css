@@ -161,3 +161,27 @@ nav {
   color: #fff;
   cursor: pointer;
 }
+.last-section {
+  margin: 1.5625rem 3.656rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.8rem 2rem;
+  border-top: 3.5px solid #e8e8e8;
+}
+
+.Form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 1rem;
+}
+
+.from-catagri {
+  font-size: 1.8rem;
+  margin: 0.4rem 0;
+}
+
+input {
+  padding: 0.4rem 3rem;
+}
