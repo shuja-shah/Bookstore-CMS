@@ -26,14 +26,15 @@ const BookForm = () => {
 
   const sendSubmition = (e) => {
     e.preventDefault();
-    // if (title && author !== '') {
-    const book = {
-      item_id: uuid(),
-      title,
-      author,
-      category,
-    };
-    dispatch(addBook(book));
+    if (title && author && category !== '') {
+      const book = {
+        item_id: uuid(),
+        title,
+        author,
+        category,
+      };
+      dispatch(addBook(book));
+    }
     setTitle('');
     setAuthor('');
     setCategory('');
