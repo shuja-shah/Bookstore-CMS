@@ -25,7 +25,11 @@ const Book = (props) => {
       </div>
       <div className="book-status">
         <div className="book-status__progress">
-          <span className="author">Completed</span>
+          <p className="numberProgress">
+            {props.progress.toString()}
+            <span> % </span>
+          </p>
+          <span className="catagri m-0">Completed</span>
         </div>
       </div>
       <div className="book-status__chapter">

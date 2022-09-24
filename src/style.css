@@ -120,3 +120,22 @@ nav {
   border-left: 1px solid #e8e8e8;
   padding: 0.2rem 0.9rem;
 }
+
+.book-status__progress {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.numberProgress {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #121212;
+}
+
+.m-0 {
+  margin: 0;
+}
