@@ -10,7 +10,7 @@ const Catogory = () => {
   const status = useSelector((state) => state.status);
   return (
     <div>
-      <button type="submit" className="btn btn-primary" onClick={handleStatus}>Check Status</button>
+      <button type="submit" className="btn btn-primary update-progress m-4" onClick={handleStatus}>Check Status</button>
       <p>{status.currentStatus}</p>
     </div>
   );

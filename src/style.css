@@ -185,3 +185,7 @@ nav {
 input {
   padding: 0.4rem 3rem;
 }
+
+.m-4 {
+  margin: 0.4rem 4rem;
+}
