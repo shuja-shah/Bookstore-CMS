@@ -40,12 +40,15 @@ const BookForm = () => {
     setCategory('');
   };
   return (
-    <form onSubmit={sendSubmition}>
-      <input type="text" placeholder="Title" onChange={handleTitle} value={title} />
-      <input type="text" placeholder="Author" onChange={handleAuthor} value={author} />
-      <input type="category" placeholder="Category" onChange={handleCategory} value={category} />
-      <button type="button" onClick={sendSubmition}>Add Book</button>
-    </form>
+    <section className="last-section">
+      <h4 className="catagri from-catagri">Add a New Book</h4>
+      <form className="Form" onSubmit={sendSubmition}>
+        <input type="text" placeholder="Title" onChange={handleTitle} value={title} />
+        <input type="text" placeholder="Author" onChange={handleAuthor} value={author} />
+        <input type="category" placeholder="Category" onChange={handleCategory} value={category} />
+        <button className="update-progress" type="button" onClick={sendSubmition}>Add Book</button>
+      </form>
+    </section>
   );
 };
 export default BookForm;
