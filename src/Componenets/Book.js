@@ -13,12 +13,12 @@ const Book = (props) => {
     <div className="book">
       <div className="book-top">
         <p className="HideME">{props.item_id}</p>
-        <h3 className="title-book">{props.category}</h3>
+        <h3 className="catagri">{props.category}</h3>
         <h3 className="title-book">{props.title}</h3>
         <span className="author">{props.author}</span>
-        <div className="CRUD">
+        <div className="CUD">
           <button type="submit" className="btn btn-primary">Comments</button>
-          <button type="submit" className="btn btn-primary">Edit</button>
+          <button type="submit" className="btn btn-primary this">Edit</button>
           <button type="submit" className="btn btn-danger" onClick={handleRemove}>Delete</button>
         </div>
 
